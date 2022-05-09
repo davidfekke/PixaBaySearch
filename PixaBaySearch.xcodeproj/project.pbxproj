@@ -11,6 +11,8 @@
 		B29E52AA2829769B003AF1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E52A92829769B003AF1AB /* ContentView.swift */; };
 		B29E52AC2829769B003AF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29E52AB2829769B003AF1AB /* Assets.xcassets */; };
 		B29E52AF2829769B003AF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29E52AE2829769B003AF1AB /* Preview Assets.xcassets */; };
+		B29E52B6282976C8003AF1AB /* PixaBayDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E52B5282976C8003AF1AB /* PixaBayDatasource.swift */; };
+		B29E52B828297AE1003AF1AB /* PixaBayHits.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E52B728297AE1003AF1AB /* PixaBayHits.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B29E52A92829769B003AF1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B29E52AB2829769B003AF1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B29E52AE2829769B003AF1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B29E52B5282976C8003AF1AB /* PixaBayDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayDatasource.swift; sourceTree = "<group>"; };
+		B29E52B728297AE1003AF1AB /* PixaBayHits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayHits.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				B29E52A92829769B003AF1AB /* ContentView.swift */,
 				B29E52AB2829769B003AF1AB /* Assets.xcassets */,
 				B29E52AD2829769B003AF1AB /* Preview Content */,
+				B29E52B5282976C8003AF1AB /* PixaBayDatasource.swift */,
+				B29E52B728297AE1003AF1AB /* PixaBayHits.swift */,
 			);
 			path = PixaBaySearch;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29E52AA2829769B003AF1AB /* ContentView.swift in Sources */,
+				B29E52B6282976C8003AF1AB /* PixaBayDatasource.swift in Sources */,
+				B29E52B828297AE1003AF1AB /* PixaBayHits.swift in Sources */,
 				B29E52A82829769B003AF1AB /* PixaBaySearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

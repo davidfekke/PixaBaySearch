@@ -8,11 +8,15 @@
 import Foundation
 
 @MainActor
-class PixaBayDataSource: ObservableObject {
+class PixaBayDataSource: NSObject, ObservableObject {
     
     let pixabayUrlString = "https://pixabay.com/api/?key=25943873-b3fceda0a6c2bc909346ff60a&q={searchplaceholder}&image_type=photo&safesearch=true&page=1&per_page=30"
     
-    @Published var previewImages: [String] = []
+    @Published var previewImages: [String]
+    
+    @MainActor override init() {
+        previewImages = []
+    }
     
     public func searchForPixaBayImages(text searchText: String) async throws -> Void {
         let newURL = pixabayUrlString.replacingOccurrences(of: "{searchplaceholder}", with: searchText)
@@ -26,11 +30,10 @@ class PixaBayDataSource: ObservableObject {
         let pixahits = try JSONDecoder().decode(PixaBayHits.self, from: data)
         
         let hits = pixahits.hits
-        //DispatchQueue.main.async {
-            previewImages = hits.map { hit in
-                hit.previewURL
-            }
-        //}
+
+        previewImages = hits.map { hit in
+            hit.previewURL
+        }
         
     }
     

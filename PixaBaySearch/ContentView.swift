@@ -11,18 +11,22 @@ struct ContentView: View {
     @ObservedObject var pixaBarDatasource = PixaBayDataSource()
     @State private var searchString = "Apple"
     
+    var columns: [GridItem] =
+             Array(repeating: .init(.flexible()), count: 3)
+    
     var body: some View {
         NavigationView {
             ScrollView {
-                ForEach(pixaBarDatasource.previewImages, id: \.self) { imageURL in
-                    AsyncImage(url: URL(string: imageURL)) { image in
-                        image.resizable()
-                    } placeholder: {
-                        ProgressView()
+                LazyVGrid(columns: columns) {
+                    ForEach(pixaBarDatasource.previewImages, id: \.self) { imageURL in
+                        AsyncImage(url: URL(string: imageURL)) { image in
+                            image.resizable()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 80, height: 80)
                     }
-                    .frame(width: 200, height: 200)
                 }
-    //
              }.navigationTitle("Image Search")
         }
         .searchable(text: $searchString, prompt: "Search images")

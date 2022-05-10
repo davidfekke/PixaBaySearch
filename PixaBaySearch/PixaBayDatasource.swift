@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class PixaBayDataSource: ObservableObject {
     
     let pixabayUrlString = "https://pixabay.com/api/?key=25943873-b3fceda0a6c2bc909346ff60a&q={searchplaceholder}&image_type=photo&safesearch=true&page=1&per_page=30"
@@ -25,11 +26,11 @@ class PixaBayDataSource: ObservableObject {
         let pixahits = try JSONDecoder().decode(PixaBayHits.self, from: data)
         
         let hits = pixahits.hits
-        DispatchQueue.main.async {
-            self.previewImages = hits.map { hit in
+        //DispatchQueue.main.async {
+            previewImages = hits.map { hit in
                 hit.previewURL
             }
-        }
+        //}
         
     }
     

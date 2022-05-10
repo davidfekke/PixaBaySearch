@@ -19,7 +19,10 @@ class PixaBayDataSource: NSObject, ObservableObject {
     }
     
     public func searchForPixaBayImages(text searchText: String) async throws -> Void {
-        let newURL = pixabayUrlString.replacingOccurrences(of: "{searchplaceholder}", with: searchText)
+        guard let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            throw NetworkError.url
+        }
+        let newURL = pixabayUrlString.replacingOccurrences(of: "{searchplaceholder}", with: encodedText)
         let url = URL(string: newURL)!
         let (data, response) = try await URLSession.shared.data(from: url)
 
